@@ -17,3 +17,11 @@ b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 c = [x for x in a and b if x in a and b]
 
 print(c)
+
+
+#Addition from Exercise 14
+
+def remove_dup(a,b):
+    return sorted(list(set(a+b)))
+
+print(remove_dup(a,b))
