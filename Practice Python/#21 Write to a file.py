@@ -39,11 +39,18 @@ soup = BeautifulSoup(r.text, 'html.parser')
 
 h2_tags = soup.findAll('h2')
 
+skip_content = ('Your Weekend Briefing', 'Listen:', 'The Daily Newsletter', 'Site Index', 'Site Information Navigation')
+
+decoded_list = []
+
+for line in h2_tags:
+    decoded_list.append(line.text.encode('ascii', 'ignore').decode('ascii'))
+
+clean_list = set([line for line in decoded_list if line.startswith(skip_content) == False])
+
 with open(file, 'w') as fileobject:
     fileobject.write("Today's Headlines:\n")
-    for line in h2_tags:
-        fileobject.write(line.text.encode('ascii', 'ignore').decode('ascii') + '\n')
-    fileobject.
+    for line in clean_list:
+        fileobject.write('- ' + line + '\n') 
     
-
 print(f'Operation complete. File {file} created')
