@@ -1,5 +1,4 @@
 #Exercise 24 (and Solution)
-
 '''This exercise is Part 1 of 4 of the Tic Tac Toe exercise series. The other exercises are: Part 2, Part 3, and Part 4.
 
 Time for some fake graphics! Let’s say we want to draw game boards that look like this:
@@ -31,13 +30,13 @@ def requestBoard():
         print('Please select 1,2,3 or 4')
         selection = input()
         if selection == '1':
-            return (3,3)
+            return (3, 3)
             break
         elif selection == '2':
-            return (8,8)
+            return (8, 8)
             break
         elif selection == '3':
-            return (19,19)
+            return (19, 19)
             break
         elif selection == '4':
             width = input('Enter custom width: ')
@@ -45,15 +44,16 @@ def requestBoard():
             return (int(width), int(height))
             break
 
+
 def drawBoard(boardSize):
     width = boardSize[0]
-    height = boardSize[1]    
-    
-    for x in range(width):
-        print(' ---'*int(width))       
-        print('|   '*int(height) + '|')
-    print(' ---'*int(width))
-            
-drawBoard(requestBoard())
+    height = boardSize[1]
 
+    for x in range(width):
+        print(' ---' * int(width))
+        print('|   ' * int(height) + '|')
+    print(' ---' * int(width))
+
+
+drawBoard(requestBoard())
 
