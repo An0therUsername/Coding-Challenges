@@ -9,7 +9,6 @@ url = 'http://www.nytimes.com'
 r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
 
-
 h2_tags = soup.findAll('h2')
 for allh2 in h2_tags:
     print (allh2.text + '\n')
