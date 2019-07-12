@@ -9,4 +9,11 @@ Then, the output should be:
 {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
 '''
 
+def createDict(n):
+    output = {}
+    for i in range(1,n+1):
+        output[i] = i*i
+    print(output)
 
+number = int(input('Please enter lenghts of dictonary: '))
+createDict(number)
