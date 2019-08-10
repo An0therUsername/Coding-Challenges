@@ -2,16 +2,14 @@
 
 For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].'''
 
-def create_array():
-    array = [int(i) for i in input('Please enter numbers for an array: ').split(' ')]   
-    return array
-    
-def create_product(array):
-    
-    print(sum(array))
-    
-    
-create_product(create_array())
+import numpy
 
+array = [1, 2, 3, 4, 5]
+arrayProduct = []
 
-#unfinished
+for i in array:
+    new_array = array[:]
+    new_array.remove(i)
+    arrayProduct.append(numpy.prod(new_array))
+    
+print(arrayProduct)
